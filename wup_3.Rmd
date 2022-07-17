@@ -23,19 +23,21 @@ $H_A$: The average number drinks is different between at least two rows.
 
 ## you choose to sit in??
 
-
+Anywhere.
 
 ## Now with ggplot - first select the basic data
 
 ```{r}
 basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 ```
+
 ## Now add in boxplot
 
 ```{r}
 basicCN + geom_boxplot()
 ```
-  
+
+This plot shows that seat does indeed have an effect on the alcohol consumed, with those sitting further back imbibing progressively more alcohol. 
   
 ### get fancy  
 
@@ -43,10 +45,25 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+This graph shows that the IQR of the back of the class is largest, the middle comes second, and the fromt is the lowest. The lowest however, has more outliers than the middle or back.
+
 ## Numerical Summarys 
+
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+
+The Front has the lowest IQR and mean of 1.80, while the middle group is next with a mean of 3.28, then the back group has the highest mean frequency of alcohol drinkers at 9.625.
 
 ## Inferential Tests
 
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+Since the P-value is 0.000116 < .05, we must reject the null hypothesis.
+
 ## Conclusions
 
-
+The section of a classroom that a student sits in does effect the alcohol consumption likeliness. The students in the back of the class saw an average of 9.625 people who drink alcohol, which is significantly larger than the front of the class who only saw 1.803. The Middle row is somewhere in between these numbers at 3.283; therefor we must reject the null hypothesis that there is no difference between the average number of drinks imbibed between people conditioned on the row they sit in.
