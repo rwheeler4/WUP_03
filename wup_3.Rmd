@@ -1,7 +1,7 @@
 ---
 title: "Alcohol vs Seat choice"
-author: "Your Name"
-date: "Fall 2020"
+author: "Riley Wheeler"
+date: "Summer2022"
 output: html_document
 ---
 
@@ -14,8 +14,16 @@ require(tidyverse)
 require(tigerstats)
 davisdata <- read.csv(file="UCDavis.csv")
 ```
+
 ## Our Goal is to answer this question Is there a difference between the alcohol consumed between the row
+
+$H_0$: There is no difference between the average number of drinks imbibed between people conditioned on the row they sit in.
+
+$H_A$: The average number drinks is different between at least two rows.   
+
 ## you choose to sit in??
+
+
 
 ## Now with ggplot - first select the basic data
 
