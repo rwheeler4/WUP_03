@@ -45,7 +45,7 @@ This plot shows that seat does indeed have an effect on the alcohol consumed, wi
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
-This graph shows that the IQR of the back of the class is largest, the middle comes second, and the fromt is the lowest. The lowest however, has more outliers than the middle or back.
+This graph shows that the IQR of the back of the class is largest, meaning they drink more alcohol, the middle comes second, and the front is the lowest. The lowest however, has more outliers than the middle or back.
 
 ## Numerical Summarys 
 
@@ -53,7 +53,7 @@ This graph shows that the IQR of the back of the class is largest, the middle co
 favstats(alcohol~Seat,data=davisdata)
 ```
 
-The Front has the lowest IQR and mean of 1.80, while the middle group is next with a mean of 3.28, then the back group has the highest mean frequency of alcohol drinkers at 9.625.
+The Front has the lowest IQR and mean consumption of 1.80 oz, while the middle group is next with a mean of 3.28 oz, then the back group has the highest mean alcohol consumed at 9.625 oz.
 
 ## Inferential Tests
 
@@ -66,4 +66,4 @@ Since the P-value is 0.000116 < .05, we must reject the null hypothesis.
 
 ## Conclusions
 
-The section of a classroom that a student sits in does effect the alcohol consumption likeliness. The students in the back of the class saw an average of 9.625 people who drink alcohol, which is significantly larger than the front of the class who only saw 1.803. The Middle row is somewhere in between these numbers at 3.283; therefor we must reject the null hypothesis that there is no difference between the average number of drinks imbibed between people conditioned on the row they sit in.
+The section of a classroom that a student sits in does effect the amount of alcohol consumption. The students in the back of the class drank an average of 9.625 oz, which is significantly larger than the front of the class with an average of just 1.8 oz. The Middle row is somewhere in between these numbers at 3.283 oz; therefor we must reject the null hypothesis that there is no difference between the average number of drinks imbibed between people conditioned on the row they sit in.
